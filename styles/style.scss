@@ -1,7 +1,9 @@
 /***** VENDORS *****/
 @import './vendors/reset.scss';
+@import './vendors/mixins.scss';
 
 /***** VIEWS *****/
 @import './views/global.scss';
 
 /***** PARTIALS *****/
+@import './partials/newParty.scss';
