@@ -1,0 +1,17 @@
+h2 Tu prends quoi toi ? 
+
+ul
+  each item in party.items
+    li
+      form(method="post" action=`/party/${ party._id }/items/${ item._id }`)
+        p= `${ item.user } : ${ item.name }`
+        button(type="submit") Supprimer
+
+form(method="post" action=`/party/${ party._id }/items`)
+  div
+    label(for="name") Je prend :
+    input(name="name" id="name" required minlength="3" placeholder="Ex : quiche aux épinards")
+  div
+    label(for="user") Je suis :
+    input(name="user" id="user" required minlength="3" placeholder="Ton nom")
+  button(type="submit") Ajouter

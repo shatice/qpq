@@ -8,14 +8,15 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/***** Default redirection route *****/
+
 app.get('/', function(req, res) {
-  // res.render('the fish knows');
   res.render('index', { title: 'Accueil' });
 });
 
+/***** Principal form | Create event *****/
+
 app.post('/party', (req, res) => {
-  // console.log(req.body);
-  // res.send('Post ok !');
   axios
   .post(`${ process.env.API_URL }/party`, req.body)
   .then(({ data }) => res.redirect(`/party/${ data._id }`))
@@ -23,7 +24,6 @@ app.post('/party', (req, res) => {
 });
 
 app.get('/party/:id', (req, res) => {
-  // res.render('party', { title: 'Mon évènement' });
   axios
   .get(`${ process.env.API_URL }/party/${ req.params.id }`)
   .then(({ data }) =>
@@ -35,6 +35,24 @@ app.get('/party/:id', (req, res) => {
   )
   .catch((err) => console.log(err));
 });
+
+/***** Form | Add item *****/
+
+app.post('/party/:id/items', (req, res) => {
+  axios
+  .post(`${ process.env.API_URL }/party/${ req.params.id }/items`, req.body)
+  .then(() => res.redirect(`/party/${ req.params.id }`))
+  .catch((err) => res.send(err));
+});
+
+app.post('/party/:id/items/:idItem', (req, res) => {
+  axios
+  .delete(`${ process.env.API_URL }/party/${ req.params.id }/items/${ req.params.idItem }`, req.body)
+  .then(() => res.redirect(`/party/${ req.params.id }`))
+  .catch((err) => res.send(err));
+});
+
+/***** PORT listener *****/
 
 app.listen(process.env.PORT, () =>
   console.log(`Front app listening on port ${ process.env.PORT }!`),
