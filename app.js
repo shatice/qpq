@@ -8,6 +8,8 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('public'));
+
 /***** Default redirection route *****/
 
 app.get('/', function(req, res) {
@@ -44,6 +46,8 @@ app.post('/party/:id/items', (req, res) => {
   .then(() => res.redirect(`/party/${ req.params.id }`))
   .catch((err) => res.send(err));
 });
+
+/***** Form | Delete item *****/
 
 app.post('/party/:id/items/:idItem', (req, res) => {
   axios

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "concurrently --kill-others \"npm run sass\" \"nodemon app.js\"",
+    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,8 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^2.0.2"
   },
   "repository": {
