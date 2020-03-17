@@ -1,6 +1,4 @@
 if (navigator.clipboard) {
-  console.log("Support du presse papier");
-  console.log(document.querySelectorAll('[data-clipboard]'));
   document.querySelectorAll('[data-clipboard]').forEach(($clipboardEl) => {
     const $button = document.createElement('button');
     $button.innerHTML = 'Copier';
@@ -10,7 +8,7 @@ if (navigator.clipboard) {
     );
   });
 } else {
-  console.warn("Pas de support :(");
+  console.warn("Pas de support du presse papier :(");
 }
 
 function copyToClipboard($clipboardEl, $button) {

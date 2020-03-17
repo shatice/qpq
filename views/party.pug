@@ -3,6 +3,6 @@ include ../partials/header.pug
 h2= party.name
 h3 Créé par #{ party.author }
 label(for="url") Partagez l'événement
-input(id="url" value=`${url}` data-clipboard=`${url}`)
+input(id="url" value=`${ url }` data-clipboard=`${ url }` data-share-url=`${ url }` data-share-title=`${ party.name }` data-share-tex=`${ party.author } vous invite à rejoindre l'évènement ${ party.name }`)
 
 include ../partials/form_add_item.pug
