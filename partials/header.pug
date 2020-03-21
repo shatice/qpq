@@ -9,12 +9,11 @@ html(lang="fr")
     link(rel="stylesheet" href="/style.css")
     script.
       if (navigator.serviceWorker) {
-        console.log('SW good');
         navigator.serviceWorker.register('/sw.js')
-          .then(() => console.log('SW registered'))
+          .then(() => console.warn('SW registered'))
           .catch(err => console.warn(err));
       } else {
-        console.log('Nope...');
+        console.warn("SW not found");
       }
     script(src="/script.js" async)
   body

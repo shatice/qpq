@@ -37,7 +37,7 @@ app.get('/party/:id', (req, res) => {
       url: `${ process.env.FRONT_URL }:${ process.env.PORT }/party/${ data._id }`
     }),
   )
-  .catch((err) => console.log(err));
+  .catch((err) => console.warn(err));
 });
 
 /***** Form | Add item *****/
