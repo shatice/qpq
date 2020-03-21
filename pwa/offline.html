@@ -8,7 +8,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <body>
-    <h1>Oops !</h1>
+    <h1>Oups !</h1>
     <h2>Vous êtes hors ligne</h2>
+
+    <script>
+      const $ul = document.createElement('ul');
+      document.body.appendChild($ul);
+
+      caches.open('parties').then((cache) =>
+        cache.keys().then((keys) =>
+          keys.forEach((key) => {
+            const name = localStorage.getItem(key.url);
+
+            if (name) {
+              const $item = document.createElement('li');
+              const $link = document.createElement('a');
+              $link.href = key.url;
+              $link.innerHTML = name;
+              $item.appendChild($link);
+              $ul.appendChild($item);
+            }
+          }),
+        ),
+      );
+    </script>
   </body>
 </html>

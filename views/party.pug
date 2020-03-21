@@ -1,5 +1,8 @@
 include ../partials/header.pug
 
+script.
+  party = !{ JSON.stringify(party) }
+
 section.party
   div.partyHeader
     h2= party.name
