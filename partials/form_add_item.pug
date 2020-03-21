@@ -1,17 +1,15 @@
-h2 Tu prends quoi toi ? 
-
-ul
+ul.partyList
   each item in party.items
     li
-      form(method="post" action=`/party/${ party._id }/items/${ item._id }`)
-        p= `${ item.user } : ${ item.name }`
+      form(method="post" action=`/party/${ party._id }/items/${ item._id }`).partyListForm
+        p.partyListForm__item.partyListForm__item--user= `${ item.user } apporte : `
+        p.partyListForm__item.partyListForm__item--name=`${ item.name }`
         button(type="submit") Supprimer
 
-form(method="post" action=`/party/${ party._id }/items`)
+form(method="post" action=`/party/${ party._id }/items`).partyForm
   div
     label(for="name") Je prend :
     input(name="name" id="name" required minlength="3" placeholder="Ex : quiche aux épinards")
-  div
     label(for="user") Je suis :
     input(name="user" id="user" required minlength="3" placeholder="Ton nom")
-  button(type="submit") Ajouter
+  button(type="submit").cta Ajouter

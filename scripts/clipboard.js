@@ -16,7 +16,7 @@ function copyToClipboard($clipboardEl, $button) {
     .writeText($clipboardEl.getAttribute('data-clipboard'))
     .then(() => {
       $button.innerHTML = 'Copié !';
-      setTimeout(() => ($button.innerHTML = 'Copier'), 2000);
+      setTimeout(() => ($button.innerHTML = 'Copier'), 5000);
     })
     .catch((err) => console.warn(err));
 }

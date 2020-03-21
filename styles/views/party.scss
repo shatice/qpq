@@ -1,0 +1,58 @@
+.party {
+  padding: 2rem 2.5rem;
+}
+
+.partyHeader {
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid $white;
+  line-height: 1.5;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: .875rem;
+  }
+}
+
+.partyList {
+  list-style: disc;
+
+  li {
+    margin-left: 1.25rem;
+    line-height: 1.5;
+
+    p.partyListForm__item--user {
+      font-size: .875rem;
+    }
+
+    p.partyListForm__item--name {
+      font-weight: bold;
+    }
+  }
+}
+
+.partyForm {
+  margin-bottom: 2.5rem;
+}
+
+.shareForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  input {
+    padding: 1rem;
+  }
+
+  button {
+    font-family: $primary-font;
+    font-size: 1rem;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}

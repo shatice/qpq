@@ -1,9 +1,18 @@
+/***** FONTS *****/
+@import './fonts/font.scss';
+
 /***** VENDORS *****/
 @import './vendors/reset.scss';
 @import './vendors/mixins.scss';
+@import './vendors/keyframes.scss';
+@import './vendors/vars.scss';
 
 /***** VIEWS *****/
 @import './views/global.scss';
+@import './views/home.scss';
+@import './views/party.scss';
 
-/***** PARTIALS *****/
-@import './partials/newParty.scss';
+/***** BLOCKS *****/
+@import './blocks/header.scss';
+@import './blocks/form.scss';
+@import './blocks/button.scss';
