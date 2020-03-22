@@ -1,0 +1,40 @@
+.partyListForm {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  @include medium {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  p.partyListForm__item--user {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: .875rem;
+  }
+
+  p.partyListForm__item--name {
+    grid-column: 1;
+    grid-row: 2;
+    font-weight: bold;
+    color: $secondary-color;
+  }
+
+  button {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    background-color: $background-color;
+    border: none;
+    color: $primary-color;
+    text-decoration: underline;
+    transition: letter-spacing .5s;
+
+    @include medium {
+      text-align: left;
+
+      &:hover {
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+}

@@ -6,8 +6,8 @@ script.
 section.party
   div.partyHeader
     h2= party.name
-    h3 Créé par #{ party.author }
+    h3 Créé par #{ party.author }, prévu le #{ party.date }
 
-  include ../partials/form_add_item.pug
+  include ../partials/form_manage_item.pug
 
   include ../partials/url.pug

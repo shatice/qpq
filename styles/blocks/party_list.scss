@@ -1,0 +1,16 @@
+.partyList {
+  list-style: disc;
+  margin-bottom: 1.25rem;
+
+  @include medium {
+    overflow-y: scroll;
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  li {
+    margin-left: 1.25rem;
+    line-height: 1.5;
+    margin: 2rem 0 2rem 1.25rem;
+  }
+}

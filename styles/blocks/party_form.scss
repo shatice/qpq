@@ -1,0 +1,18 @@
+.partyForm {
+  margin-bottom: 2rem;
+
+  @include medium {
+    padding-top: 2rem;
+    grid-column: 2;
+    grid-row: 2;
+    @include flexbox(column, flex-start, flex-start, unset);
+  }
+
+  button {
+    margin: 2rem auto;
+
+    @include medium {
+      margin: 2rem 0;
+    }
+  }
+}
