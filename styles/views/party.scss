@@ -1,12 +1,30 @@
 .party {
-  padding: 2rem 2.5rem;
+  padding: 0 2rem 2rem;
+
+  @include medium {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% auto 30%;
+    grid-gap: 0 2rem;
+    height: 90vh;
+  }
 }
 
 .partyHeader {
   padding-bottom: 1.25rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid $white;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid $border-color;
   line-height: 1.5;
+
+  @include medium {
+    grid-column: 1 / 3;
+    margin: unset;
+  }
+
+  h2, 
+  h3 {
+    color: $secondary-color;
+  }
 
   h2 {
     font-size: 1.25rem;
@@ -20,39 +38,116 @@
 
 .partyList {
   list-style: disc;
+  margin-bottom: 1.25rem;
+
+  @include medium {
+    overflow-y: scroll;
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
 
   li {
     margin-left: 1.25rem;
     line-height: 1.5;
+    margin: 2rem 0 2rem 1.25rem;
+  }
+}
 
-    p.partyListForm__item--user {
-      font-size: .875rem;
-    }
+.partyListForm {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 
-    p.partyListForm__item--name {
-      font-weight: bold;
+  @include medium {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  p.partyListForm__item--user {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: .875rem;
+  }
+
+  p.partyListForm__item--name {
+    grid-column: 1;
+    grid-row: 2;
+    font-weight: bold;
+    color: $secondary-color;
+  }
+
+  button {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    background-color: $background-color;
+    border: none;
+    color: $primary-color;
+    text-decoration: underline;
+    transition: letter-spacing .5s;
+
+    @include medium {
+      text-align: left;
+
+      &:hover {
+        letter-spacing: 0.05rem;
+      }
     }
   }
 }
 
 .partyForm {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+
+  @include medium {
+    padding-top: 2rem;
+    grid-column: 2;
+    grid-row: 2;
+    @include flexbox(column, flex-start, flex-start, unset);
+  }
+
+  button {
+    margin: 2rem auto;
+
+    @include medium {
+      margin: 2rem 0;
+    }
+  }
 }
 
 .shareForm {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @include flexbox(row, space-between, unset, wrap); 
+  border-top: 1px solid $border-color;
+  padding-top: 1.25rem;
+
+  @include medium {
+    grid-column: 2;
+    grid-row: 3;
+    padding-top: 2rem;
+    border: none;
+    @include flexbox(row, space-between, unset, wrap);
+
+    label, 
+    input {
+      width: 100%;
+    }
+  }
 
   input {
     padding: 1rem;
   }
 
   button {
+    max-height: 1rem;
     font-family: $primary-font;
     font-size: 1rem;
-    color: $white;
+    color: $primary-color;
     text-transform: uppercase;
     text-decoration: underline;
+    background-color: unset;
+    border: unset;
+    transition: letter-spacing .5s;
+
+    &:hover {
+      letter-spacing: 0.05rem;
+    }
   }
 }

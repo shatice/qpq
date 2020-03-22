@@ -1,9 +1,9 @@
 form(method="post" action="/party").newParty
   div.newParty__fields
     label(for="name") Nom de l'événement
-    input(name="name" id="name" required minlength="3" placeholder="Ex : Nouvel an")
+    input(name="name" id="name" required minlength="3" placeholder="Ex : Nouvel an" autocomplete="off")
     label(for="author" required) Auteur
-    input(name="author" id="author" required minlength="3" placeholder="Votre nom")
+    input(name="author" id="author" required minlength="3" placeholder="Votre nom" autocomplete="off")
     label(for="date") Date
-    input(name="date" id="date" type="date")
-  button(type="submit").cta C'est parti
+    input(name="date" id="date" type="date" autocomplete="off")
+  button(type="submit").cta.newParty__cta C'est parti

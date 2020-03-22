@@ -1,8 +1,16 @@
 header {
-  padding: 2rem 0 2rem;
+  padding: 2rem;
+
+  @include medium {
+    height: 10vh;
+  }
 
   h1 {
     text-align: center;
     font-size: 1.5rem;
+
+    @include medium {
+      text-align: left;
+    }
   }
 }

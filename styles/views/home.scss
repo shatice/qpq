@@ -1,8 +1,15 @@
 .home {
-  padding: 2rem 1.25rem;
+  padding: 2rem 2rem;
+
+  @include medium {
+    margin: 0 auto;
+    height: 80vh;
+    @include flexbox(column, center, center, unset);
+  }
 
   h2 {
     font-size: 1.25rem;
     margin-bottom: 2rem;
+    color: $secondary-color;
   }
 }

@@ -1,6 +1,13 @@
-// $primary-font: 'Inconsolata', sans-serif; 
-$primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+$primary-font: 'Inconsolata', sans-serif; 
+// $primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 
+$primary-color: #FCC404; 
+$secondary-color: #fff;
 
-$black: #040B0B; 
-$white: #FFFFFF; 
+$background-color: #0f0f0f;
+
+$border-color: $primary-color;
+
+$cta-bg-color: $primary-color; 
+$cta-bg-desktop: rgba(252, 194, 4, 0.685); 
+$cta-text-color: $background-color;

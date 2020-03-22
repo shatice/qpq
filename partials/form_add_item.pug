@@ -9,7 +9,7 @@ ul.partyList
 form(method="post" action=`/party/${ party._id }/items`).partyForm
   div
     label(for="name") Je prend :
-    input(name="name" id="name" required minlength="3" placeholder="Ex : quiche aux épinards")
+    input(name="name" id="name" required minlength="3" placeholder="Ex : quiche aux épinards" autocomplete="off")
     label(for="user") Je suis :
-    input(name="user" id="user" required minlength="3" placeholder="Ton nom")
+    input(name="user" id="user" required minlength="3" placeholder="Ton nom" autocomplete="off")
   button(type="submit").cta Ajouter
